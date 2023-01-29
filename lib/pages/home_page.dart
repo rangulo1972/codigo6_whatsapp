@@ -71,9 +71,9 @@ class _HomePageState extends State<HomePage>
           Text("Comunidad"),
           //! acá llamamos a la página de ChatPage
           ChatPage(),
+          Text("Status"),
           //! acá llamamos a la página de CallPage
           CallPage(),
-          Text("Calls"),
         ],
       ),
     );

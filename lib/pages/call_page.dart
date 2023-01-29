@@ -5,6 +5,8 @@ class CallPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Text("Esta es la página de CallPage"),
+    );
   }
 }
