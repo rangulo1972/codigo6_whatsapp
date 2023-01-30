@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:codigo6_whatsapp/pages/chat_page.dart';
+import 'package:codigo6_whatsapp/pages/status_page.dart';
 import 'package:codigo6_whatsapp/pages/call_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -82,7 +83,8 @@ class _HomePageState extends State<HomePage>
           Text("Comunidad"),
           //! acá llamamos a la página de ChatPage
           ChatPage(),
-          Text("Status"),
+          //! acá llamamos a la página de StatusPage
+          StatusPage(),
           //! acá llamamos a la página de CallPage
           CallPage(),
         ],
