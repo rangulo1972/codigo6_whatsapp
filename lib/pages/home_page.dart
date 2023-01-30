@@ -10,6 +10,7 @@ class HomePage extends StatefulWidget {
 //! usamos mixin, llamando con with a SingleTickerProviderStateMixin, para heredar de otra clase
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
+  //! declaramos variable para obtener el número del index que se encuentra dentro de la clase de myTabController
   int myIndex2 = 0;
   late TabController
       myTabController; //! con late le indicamos que luego será inicializado el objeto
@@ -69,6 +70,7 @@ class _HomePageState extends State<HomePage>
           ],
         ),
       ),
+      //! creamos un widget método para el floatingActionButton
       floatingActionButton: _bottomButtoms(),
       // floatingActionButton: FloatingActionButton(
       //   onPressed: () {},
@@ -88,6 +90,7 @@ class _HomePageState extends State<HomePage>
     );
   }
 
+  //! método para hacer los cambios en los íconos de cada floatingActionButton
   Widget _bottomButtoms() {
     return myIndex2 == 3
         ? FloatingActionButton(
