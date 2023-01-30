@@ -142,6 +142,32 @@ class CallPage extends StatelessWidget {
               color: Color(0xff10CE5F),
             ),
           ),
+          ListTile(
+            leading: CircleAvatar(
+              backgroundColor: Colors.black12,
+              radius: 22,
+              backgroundImage: NetworkImage(
+                  "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+            ),
+            title: Text("Daniel Arias"),
+            subtitle: Row(
+              children: [
+                Icon(
+                  Icons.call_made,
+                  size: 15,
+                  color: Color(0xff10CE5F),
+                ),
+                SizedBox(
+                  width: 6,
+                ),
+                Text("January 19, 20:00"),
+              ],
+            ),
+            trailing: Icon(
+              Icons.phone,
+              color: Color(0xff10CE5F),
+            ),
+          ),
           //* fin de la relación de las llamadas de los contactos
           Divider(
             indent: 10,

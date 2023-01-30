@@ -10,6 +10,7 @@ class HomePage extends StatefulWidget {
 //! usamos mixin, llamando con with a SingleTickerProviderStateMixin, para heredar de otra clase
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
+  int myIndex2 = 0;
   late TabController
       myTabController; //! con late le indicamos que luego será inicializado el objeto
 
@@ -27,6 +28,7 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
+    print(myTabController.index);
     // print(
     //     "BILDDDD::::!!!!"); //! para probar lo que se ve en consola, inicia con hot reload
     return Scaffold(
@@ -39,6 +41,12 @@ class _HomePageState extends State<HomePage>
         ],
         bottom: TabBar(
           controller: myTabController,
+          //! uso de onTap para capturar el valor del index de myTabController
+          onTap: (myIndex) {
+            myIndex = myTabController.index;
+            myIndex2 = myIndex;
+            setState(() {});
+          },
           indicatorColor: Colors.white,
           indicatorWeight: 3.5,
 //          isScrollable: true,//* para tener un scroll tapBar en caso lo requiera
@@ -61,10 +69,11 @@ class _HomePageState extends State<HomePage>
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.message),
-      ),
+      floatingActionButton: _bottomButtoms(),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {},
+      //   child: Icon(Icons.message),
+      // ),
       body: TabBarView(
         controller: myTabController,
         children: [
@@ -77,5 +86,34 @@ class _HomePageState extends State<HomePage>
         ],
       ),
     );
+  }
+
+  Widget _bottomButtoms() {
+    return myIndex2 == 3
+        ? FloatingActionButton(
+            onPressed: () {},
+            child: Icon(Icons.add_ic_call),
+          )
+        : myIndex2 == 2
+            ? Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  FloatingActionButton(
+                    onPressed: () {},
+                    child: Icon(Icons.edit),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  FloatingActionButton(
+                    onPressed: () {},
+                    child: Icon(Icons.photo_camera),
+                  ),
+                ],
+              )
+            : FloatingActionButton(
+                onPressed: () {},
+                child: Icon(Icons.message),
+              );
   }
 }
