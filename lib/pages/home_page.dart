@@ -27,8 +27,8 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
-    print(
-        "BILDDDD::::!!!!"); //! para probar lo que se ve en consola, inicia con hot reload
+    // print(
+    //     "BILDDDD::::!!!!"); //! para probar lo que se ve en consola, inicia con hot reload
     return Scaffold(
       appBar: AppBar(
         title: Text("WhatsApp"),
